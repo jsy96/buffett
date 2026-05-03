@@ -16,7 +16,7 @@ const SEARCH_TRIGGER_PHRASES = [
 ];
 
 async function searchWithTavily(query) {
-  const tavilyApiKey = process.env.TAVILY_API_KEY || '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';
+  const tavilyApiKey = process.env.TAVILY_API_KEY;
 
   if (!tavilyApiKey) {
     return null;
@@ -57,8 +57,8 @@ export async function POST(req) {
   const { messages } = await req.json();
 
   const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY || 'tp-cb2mf19u2cctrwxzdtgr1r7lybg1fhtgbg5483l96gr82iyb',
-    baseURL: process.env.OPENAI_BASE_URL || 'https://token-plan-cn.xiaomimimo.com/v1',
+    apiKey: process.env.OPENAI_API_KEY,
+    baseURL: process.env.OPENAI_BASE_URL,
   });
 
   const systemMessage = {
