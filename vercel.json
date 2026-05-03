@@ -2,9 +2,5 @@
   "version": 2,
   "buildCommand": "next build",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "OPENAI_API_KEY": "@buffett-api-key",
-    "OPENAI_BASE_URL": "@buffett-base-url"
-  }
+  "framework": "nextjs"
 }
