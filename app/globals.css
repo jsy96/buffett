@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(135deg, #fdf8f3 0%, #f5ede4 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #d4a574;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #8b4513 0%, #5c2d0e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #3d2314;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #7a5c45;
+  font-style: italic;
+}
+
+.welcome-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+  border-left: 4px solid #8b4513;
+}
+
+.welcome-text {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3d2314;
+}
+
+.welcome-text:last-child {
+  margin-bottom: 0;
+}
+
+.signature {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px dashed #d4a574;
+  font-style: italic;
+  color: #7a5c45;
+  text-align: right;
+}
+
+.signature p {
+  margin: 0;
+}
+
+.messages-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #8b4513 0%, #5c2d0e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.message.user .message-avatar {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+}
+
+.message-content {
+  max-width: 80%;
+}
+
+.message-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7a5c45;
+  margin-bottom: 4px;
+}
+
+.message.user .message-role {
+  text-align: right;
+  color: #6b7280;
+}
+
+.message-text {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.08);
+  line-height: 1.7;
+  color: #3d2314;
+  white-space: pre-wrap;
+}
+
+.message.user .message-text {
+  background: linear-gradient(135deg, #8b4513 0%, #5c2d0e 100%);
+  color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 4px;
+}
+
+.samples-container {
+  margin-bottom: 24px;
+}
+
+.samples-title {
+  font-size: 14px;
+  color: #7a5c45;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.samples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.sample-button {
+  background: white;
+  border: 1px solid #d4a574;
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  color: #5c2d0e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.5;
+}
+
+.sample-button:hover {
+  background: #fdf8f3;
+  border-color: #8b4513;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
+.input-form {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.input-textarea {
+  flex: 1;
+  padding: 16px;
+  border: 2px solid #d4a574;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  background: white;
+  color: #3d2314;
+  transition: border-color 0.2s ease;
+}
+
+.input-textarea:focus {
+  border-color: #8b4513;
+}
+
+.input-textarea::placeholder {
+  color: #a89080;
+}
+
+.input-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.send-button {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #8b4513 0%, #5c2d0e 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.footer {
+  margin-top: 32px;
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px dashed #d4a574;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #7a5c45;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .welcome-card {
+    padding: 20px;
+  }
+
+  .samples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .send-button {
+    width: 100%;
+  }
+}
