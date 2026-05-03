@@ -61,9 +61,12 @@ export async function POST(req) {
     baseURL: process.env.OPENAI_BASE_URL,
   });
 
+  const today = new Date().toISOString().split('T')[0];
+  const systemPromptWithDate = `${BUFFETT_SYSTEM_PROMPT}\n\n## 当前日期\n今天是 ${today}。回答涉及时间相关问题时请使用这个日期。`;
+
   const systemMessage = {
     role: 'system',
-    content: BUFFETT_SYSTEM_PROMPT,
+    content: systemPromptWithDate,
   };
 
   const allMessages = [systemMessage, ...messages];
